@@ -60,45 +60,20 @@
             </div>
         </div>
         <div class="row">
+        @foreach($obj_pack as $obj_pack0)
             <div class="col-lg-4">
                 <div class="single-destination relative">
                     <div class="thumb relative">
                         <div class="overlay overlay-bg"></div>
-                        <img class="img-fluid" src="img/d1.jpg" alt="">
+                        <img class="img-fluid" style="height:200px;" src="{{$obj_pack0->galeri_letak}}" alt="">
                     </div>
                     <div class="desc">
-                        <a href="#" class="price-btn">$150</a>
-                        <h4>Mountain River</h4>
-                        <p>Paraguay</p>
+                        <a href="#" class="price-btn">Rp. {{$obj_pack0->objek_biaya}} ,-</a>
+                        <h4>{{$obj_pack0->objek_nama}}</h4>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="single-destination relative">
-                    <div class="thumb relative">
-                        <div class="overlay overlay-bg"></div>
-                        <img class="img-fluid" src="img/d2.jpg" alt="">
-                    </div>
-                    <div class="desc">
-                        <a href="#" class="price-btn">$250</a>
-                        <h4>Dream City</h4>
-                        <p>Paris</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="single-destination relative">
-                    <div class="thumb relative">
-                        <div class="overlay overlay-bg"></div>
-                        <img class="img-fluid" src="img/d3.jpg" alt="">
-                    </div>
-                    <div class="desc">
-                        <a href="#" class="price-btn">$350</a>
-                        <h4>Cloud Mountain</h4>
-                        <p>Sri Lanka</p>
-                    </div>
-                </div>
-            </div>
+        @endforeach
         </div>
     </div>
 </section>
@@ -117,99 +92,34 @@
             </div>
         </div>
         <div class="row">
+        <?php $arr=array("");$arr1=array("");$co=0;?>
+        @foreach($pak_rinc as $pak_rinc1)
+        <?php 
+            for($a=0;$a<count($arr);$a++){
+                if($arr[$a]!=$pak_rinc1->paket_nama && $a==count($arr)-1){
+                    $arr[$a+1]=$pak_rinc1->paket_nama;
+                    $arr1[$a+1]=$pak_rinc1->objek_nama;
+                    echo $arr1[$a+1];
+                    break;
+                }
+            }
+        ?>
+        @endforeach
+        @for ($i = 0; $i < count($arr); $i++)
+            @if($arr[$i]!="")
             <div class="col-lg-4">
                 <div class="single-price">
-                    <h4>Cheap Packages</h4>
+                    <h4>{{$arr[$i]}}</h4>
                     <ul class="price-list">
                         <li class="d-flex justify-content-between align-items-center">
                             <span>New York</span>
                             <a href="#" class="price-btn">$1500</a>
                         </li>
-                        <li class="d-flex justify-content-between align-items-center">
-                            <span>Maldives</span>
-                            <a href="#" class="price-btn">$1500</a>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center">
-                            <span>Sri Lanka</span>
-                            <a href="#" class="price-btn">$1500</a>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center">
-                            <span>Nepal</span>
-                            <a href="#" class="price-btn">$1500</a>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center">
-                            <span>Thiland</span>
-                            <a href="#" class="price-btn">$1500</a>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center">
-                            <span>Singapore</span>
-                            <a href="#" class="price-btn">$1500</a>
-                        </li>
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="single-price">
-                    <h4>Luxury Packages</h4>
-                    <ul class="price-list">
-                        <li class="d-flex justify-content-between align-items-center">
-                            <span>New York</span>
-                            <a href="#" class="price-btn">$1500</a>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center">
-                            <span>Maldives</span>
-                            <a href="#" class="price-btn">$1500</a>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center">
-                            <span>Sri Lanka</span>
-                            <a href="#" class="price-btn">$1500</a>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center">
-                            <span>Nepal</span>
-                            <a href="#" class="price-btn">$1500</a>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center">
-                            <span>Thiland</span>
-                            <a href="#" class="price-btn">$1500</a>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center">
-                            <span>Singapore</span>
-                            <a href="#" class="price-btn">$1500</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="single-price">
-                    <h4>Camping Packages</h4>
-                    <ul class="price-list">
-                        <li class="d-flex justify-content-between align-items-center">
-                            <span>New York</span>
-                            <a href="#" class="price-btn">$1500</a>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center">
-                            <span>Maldives</span>
-                            <a href="#" class="price-btn">$1500</a>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center">
-                            <span>Sri Lanka</span>
-                            <a href="#" class="price-btn">$1500</a>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center">
-                            <span>Nepal</span>
-                            <a href="#" class="price-btn">$1500</a>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center">
-                            <span>Thiland</span>
-                            <a href="#" class="price-btn">$1500</a>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center">
-                            <span>Singapore</span>
-                            <a href="#" class="price-btn">$1500</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            @endif
+        @endfor
         </div>
     </div>
 </section>
